@@ -1,0 +1,15 @@
+{
+	"name": "ADF-Mukul",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Enabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "34447e2b-ae07-4896-876e-90ce42963103",
+		"tenantId": "db5bd1c4-ba80-441e-81ea-60b3075d30ec"
+	}
+}
