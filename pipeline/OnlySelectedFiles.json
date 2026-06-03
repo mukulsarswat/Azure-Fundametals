@@ -51,18 +51,18 @@
 					"isSequential": true,
 					"activities": [
 						{
-							"name": "If File Matches",
+							"name": "If Condition1",
 							"type": "IfCondition",
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
 								"expression": {
-									"value": "@startswith(item().name,'Fact')",
+									"value": "@startswith(item().p_file_name,'Fact')",
 									"type": "Expression"
 								},
 								"ifTrueActivities": [
 									{
-										"name": "Copy-Fact",
+										"name": "CopyFact",
 										"type": "Copy",
 										"dependsOn": [],
 										"policy": {
@@ -108,10 +108,10 @@
 										},
 										"inputs": [
 											{
-												"referenceName": "param_source_csv",
+												"referenceName": "param_source",
 												"type": "DatasetReference",
 												"parameters": {
-													"pfilename": {
+													"p_file_name": {
 														"value": "@item().name",
 														"type": "Expression"
 													}
@@ -120,14 +120,8 @@
 										],
 										"outputs": [
 											{
-												"referenceName": "reporting_sink",
-												"type": "DatasetReference",
-												"parameters": {
-													"p_file_name": {
-														"value": "@item().name",
-														"type": "Expression"
-													}
-												}
+												"referenceName": "CSV_reporting",
+												"type": "DatasetReference"
 											}
 										]
 									}
