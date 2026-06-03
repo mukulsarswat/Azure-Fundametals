@@ -3,14 +3,7 @@
 	"properties": {
 		"annotations": [],
 		"runtimeState": "Started",
-		"pipelines": [
-			{
-				"pipelineReference": {
-					"referenceName": "pipeline_manager",
-					"type": "PipelineReference"
-				}
-			}
-		],
+		"pipelines": [],
 		"type": "BlobEventsTrigger",
 		"typeProperties": {
 			"blobPathBeginsWith": "/source/blobs/csv_files/Fact_Sales_1.csv",
