@@ -14,6 +14,9 @@
 		"linkedserviceDL_properties_typeProperties_url": {
 			"value": "https://storagedatafactorymukul.dfs.core.windows.net/"
 		},
+		"manger_trigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/e3043d40-6303-4f03-9c0c-0d2925432f6b/resourceGroups/RG_ADF/providers/Microsoft.Storage/storageAccounts/storagedatafactorymukul"
+		},
 		"containerUri": {
 			"value": ""
 		},

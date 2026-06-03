@@ -19,6 +19,10 @@
 			"type": "string",
 			"defaultValue": "https://storagedatafactorymukul.dfs.core.windows.net/"
 		},
+		"manger_trigger_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/e3043d40-6303-4f03-9c0c-0d2925432f6b/resourceGroups/RG_ADF/providers/Microsoft.Storage/storageAccounts/storagedatafactorymukul"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -58,6 +62,29 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "ADF-Mukul_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"manger_trigger_properties_typeProperties_scope": {
+						"value": "[parameters('manger_trigger_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-Mukul_ArmTemplate_0')]"
+			]
 		}
 	]
 }
